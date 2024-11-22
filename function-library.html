@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Question for Sidnee</title>
+  <style>
+    input {
+      font-size: 2em;
+      margin: 10px 1px 0;
+    }
+  </style>
+  </head>
+<body>
+<p>d</p>
+  <script>
+/* Get name from sidnee
+Give response if name sidnee
+Give response if name not sidnee
+Ask sidnee question
+Give response if sidnee confirms*/
+
+
+let humanScore = 0
+let computerScore = 0
+function getComputerChoice(cpu) {
+  let result =  Math.floor(Math.random() * cpu)
+  if (result === 0) {
+  result = 'Paper';
+  } else if(result === 1) {
+    result = "Rock";
+  }else {
+    result ="Scissors";
+  }
+  return result;
+}
+
+function getHumanChoice() {
+let choice = prompt("Rock, Paper, Scissors?");
+if(choice.toLowerCase() === 'rock') {
+  choice = "Rock"
+}else if(choice.toLowerCase() === 'paper') {
+  choice = "Paper"
+}else if(choice.toLowerCase() === "scissors") {
+  choice = "Scissors"
+} else if(choice != 'rock' || choice != "paper" || choice != 'scissors') {
+getHumanChoice()
+}
+
+return choice;
+}
+
+
+function playRound(humanChoice, computerChoice) {
+if (humanChoice === 'Rock' && computerChoice === "Scissors") {
+  humanScore++
+  console.log("Rock beats cpu's Scissors")
+} else if(humanChoice === 'Paper' && computerChoice === 'Rock') {
+  console.log('Paper beats cpu\'s Rock')
+  humanScore++
+}else if(humanChoice === 'Scissors' && computerChoice === 'Paper') {
+  humanScore++
+  console.log('Scissors beaths cpu\'s Paper')
+}else if(computerChoice === 'Rock' && humanChoice === 'Scissors') {
+  computerScore++
+  console.log('Computer wins the round with Rock!')
+}else if(computerChoice === 'Paper' && humanChoice === 'Rock') {
+  computerScore++
+  console.log('Computer wins the round with Paper!')
+}else if(computerChoice === 'Scissors' && humanChoice === 'Paper')  {
+  computerScore++
+  console.log('Computer wins the round with Scissors!')
+}else
+console.log('Draw!')
+}
+
+
+const humanSelection = getHumanChoice();
+const humanSelectionTwo = getHumanChoice();
+const computerSelection = getComputerChoice(3);
+const computerSelectionTwo = getComputerChoice(3);
+const humanSelectionThree = getHumanChoice();
+const humanSelectionFour = getHumanChoice();
+const computerSelectionThree = getComputerChoice(3);
+const computerSelectionFour = getComputerChoice(3);
+const humanSelectionFive = getHumanChoice();
+const computerSelectionFive = getComputerChoice(3);
+
+
+
+function playGame(humanChoice, computerChoice) {
+playRound(humanSelection, computerSelection)
+{
+playRound(humanSelectionTwo, computerSelectionTwo)
+}
+{
+playRound(humanSelectionThree, computerSelectionThree)
+}
+{
+playRound(humanSelectionFour, computerSelectionFour)
+}
+{
+playRound(humanSelectionFive, computerSelectionFive) 
+  if(humanScore > computerScore) {
+    alert('Player One is the winner!')
+  } else if(computerScore > humanScore) {
+    alert("Computer beat Player One!")
+  }else alert('The Game was a draw!')
+}
+}
+
+playGame()
+
+  </script>
+</body>
+</html>
